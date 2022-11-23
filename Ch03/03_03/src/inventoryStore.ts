@@ -158,7 +158,7 @@ class InventoryStore {
    *
    * @private  <-- just information, doesn't actually do anything at runtime
    */
-  _load() {
+  protected _load() {
     return Promise.all([
       getFromStorage("Categories"),
       getFromStorage("Inventory")
@@ -175,7 +175,7 @@ class InventoryStore {
    *
    * @private  <-- just information, doesn't actually do anything at runtime
    */
-  _save() {
+  protected _save() {
     return saveToStorage("Inventory", this._items);
   }
 
@@ -188,3 +188,4 @@ class InventoryStore {
 
 // Expose the singleton in its own variable
 const inventoryStore = InventoryStore.instance;
+
