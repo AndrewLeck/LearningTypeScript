@@ -2,8 +2,12 @@ let displayName: string = "Jess's standing desk";
 let inventoryType: string = "furniture";
 let trackingNumber: string = "FD123455";
 let createDate: Date = new Date();
-let originalCost: any = 425;
-originalCost = "A LOT of money!";
+
+type Cost = number | string;
+
+let originalCost: Cost = 425;
+
+
 
 enum InventoryItemType {
     Computer = "computer",
