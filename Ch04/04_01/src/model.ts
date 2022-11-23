@@ -48,8 +48,14 @@ saveInventoryItem({
     createDate: new Date(),
 });
 
-function clone(source) {
+function clone<T, U>(source:T, options:U): T {
     const serialized = JSON.stringify(source);
     return JSON.parse(serialized);
 }
 
+const cloned = clone(inventoryItem,{deep: true});
+
+interface KeyValueParir<Tkey, TValue> {
+    key: Tkey;
+    Value: TValue;
+}
